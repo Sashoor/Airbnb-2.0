@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { setRevalidateHeaders } from 'next/dist/server/send-payload'
 import Header from "../components/Header"
+import Banner from "../components/Banner"
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
 <Header />
-      {/* Banner */}
+      <Banner />
     </div>
   )
 }
