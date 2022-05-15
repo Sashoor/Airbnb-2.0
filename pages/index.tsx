@@ -14,7 +14,6 @@ export default function Home({ exploreData }) {
         <title>Airbnb Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
       <Banner />
 
@@ -23,12 +22,19 @@ export default function Home({ exploreData }) {
           <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
 
           {/* pull some data from a server - api endpoint */}
-          {exploreData?.map(({img, location, distance}) => (
-            <SmallCard key={img }
-            img={img} distance={distance} location={location}/>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {exploreData?.map(({ img, location, distance }) => (
+              <SmallCard key={img}
+                img={img} distance={distance} location={location} />
+            ))}
+          </div>
         </section>
-      </main> 
+
+      {/* <section>
+        <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
+      </section> */}
+
+      </main>
     </div>
   )
 }
